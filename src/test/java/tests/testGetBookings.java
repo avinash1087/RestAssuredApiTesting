@@ -1,3 +1,5 @@
+package tests;
+
 import helper.createTestData;
 import helper.testHelper;
 import io.restassured.response.Response;
@@ -14,7 +16,7 @@ public class testGetBookings {
     Response response;
 
     @Test
-    public void getAllBookings() {
+    public void testGetAllBookings() {
         response = testHelper.getAllBookings();
         Assert.assertEquals(200, response.statusCode());
     }
@@ -49,7 +51,7 @@ public class testGetBookings {
     }
 
     @Test
-    public void getBookingByName() {
+    public void testGetBookingByName() {
     /*
         Following approach is followed to test this functionality
         * Create a booking
@@ -76,7 +78,7 @@ public class testGetBookings {
     }
 
     @Test
-    public void getBookingByDate() throws ParseException {
+    public void testGetBookingByDate() throws ParseException {
     /*
         Following approach is followed to test this functionality
         * Create a booking

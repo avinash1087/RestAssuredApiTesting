@@ -1,3 +1,5 @@
+package tests;
+
 import helper.testHelper;
 import io.restassured.response.Response;
 import org.junit.Assert;

@@ -1,3 +1,5 @@
+package tests;
+
 import helper.testHelper;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
@@ -11,7 +13,7 @@ public class testDelete {
     helper.testHelper testHelper = new testHelper();
     Response response;
     @Test
-    public void deleteBooking(){
+    public void testDeleteRequest(){
 
 //      We first create a booking in order to test DELETE request
         response = testHelper.createBooking();

@@ -1,3 +1,5 @@
+package tests;
+
 import helper.testHelper;
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
