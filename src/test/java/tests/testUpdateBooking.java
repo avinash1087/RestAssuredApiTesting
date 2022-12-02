@@ -8,12 +8,11 @@ import org.junit.Test;
 import java.util.HashMap;
 import java.util.List;
 
-public class testUpdateBooking {
-    helper.testHelper testHelper = new testHelper();
+public class testUpdateBooking extends testHelper {
     Response response;
 
     @Test
-    public void testPutRequest() {
+    public void testPutRequest()  {
     /*
         Following approach is followed to test this functionality
         * Create a booking
@@ -23,17 +22,15 @@ public class testUpdateBooking {
     */
 
 //        Create a Booking
-        response = testHelper.createBooking();
-        String firstName = response.jsonPath().getString("booking.firstname");
-        String lastName = response.jsonPath().getString("booking.lastname");
+        response = createBooking();
         int actualBookingId = response.getBody().jsonPath().get("bookingid");
 
 //        GET booking by ID and validate it
-        response = testHelper.updateBooking(actualBookingId);
+        response = updateBooking(actualBookingId);
         Assert.assertEquals(200, response.statusCode());
 
 //        DELETE the booking
-        testHelper.deleteBooking(actualBookingId);
+        deleteBooking(actualBookingId);
 
     }
 }

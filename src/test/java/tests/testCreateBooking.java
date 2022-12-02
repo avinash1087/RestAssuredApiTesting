@@ -11,15 +11,14 @@ import org.junit.Test;
 
 import static io.restassured.RestAssured.given;
 
-public class testCreateBooking {
-    testHelper testHelper = new testHelper();
+public class testCreateBooking extends testHelper{
     Response response;
     int bookingId;
 
     @Test
     public void testCreateBooking() {
 
-        response = testHelper.createBooking();
+        response = createBooking();
         bookingId = response.getBody().jsonPath().get("bookingid");
 
         Assert.assertEquals(200, response.statusCode());

@@ -47,4 +47,13 @@ public class createTestData {
 
         return body;
     }
+
+    public static JSONObject getPartialUpdateBookingData(){
+        JSONObject body = new JSONObject();
+        body.put("firstname","Stephan");
+        body.put("lastname","Hawkings");
+        body.put("additionalneeds","Double Bed");
+
+        return body;
+    }
 }

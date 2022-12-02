@@ -78,4 +78,16 @@ public class testHelper {
                 body(updateRequestBody.toString()).
                 when().put(baseUrl + "/" + bookingId).thenReturn();
     }
+
+    public Response updatePartialBooking(int bookingId){
+        //      Get Token in order to delete a booking
+        String token = getToken();
+        Assert.assertNotNull(token);
+
+        JSONObject updateRequestBody=createTestData.getPartialUpdateBookingData();
+        System.out.println("Partially Updating BookingID: "+bookingId);
+        return given().headers("Content-Type", "application/json", "Cookie", "token=" + token).
+                body(updateRequestBody.toString()).
+                when().patch(baseUrl + "/" + bookingId).thenReturn();
+    }
 }

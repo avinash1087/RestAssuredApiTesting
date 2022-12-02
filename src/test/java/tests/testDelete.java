@@ -9,20 +9,19 @@ import org.junit.Test;
 
 import static io.restassured.RestAssured.given;
 
-public class testDelete {
-    helper.testHelper testHelper = new testHelper();
+public class testDelete extends testHelper{
     Response response;
     @Test
     public void testDeleteRequest(){
 
 //      We first create a booking in order to test DELETE request
-        response = testHelper.createBooking();
+        response = createBooking();
         Assert.assertEquals(200,response.statusCode());
         int bookingId = response.getBody().jsonPath().get("bookingid");
         System.out.println("Booking Confirmed, Please note the Booking ID: "+bookingId);
 
 //        Test that the above created record is deleted successfully
-        response = testHelper.deleteBooking(bookingId);
+        response = deleteBooking(bookingId);
         Assert.assertEquals(201,response.statusCode());
 
     }
