@@ -1,11 +1,11 @@
 package tests;
 
-import helper.testHelper;
+import helper.TestHelper;
 import io.restassured.response.Response;
 import org.junit.Assert;
 import org.junit.Test;
 
-public class TestGetAllBookings extends testHelper {
+public class TestGetAllBookings extends TestHelper {
 
 
         @Test
