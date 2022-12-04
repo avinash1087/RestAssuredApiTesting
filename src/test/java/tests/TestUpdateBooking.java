@@ -1,18 +1,14 @@
 package tests;
 
-import helper.testHelper;
 import io.restassured.response.Response;
 import org.junit.Assert;
 import org.junit.Test;
 
-import java.util.HashMap;
-import java.util.List;
-
-public class testUpdateBooking extends testHelper {
+public class TestUpdateBooking extends BaseClass {
     Response response;
 
     @Test
-    public void testPutRequest()  {
+    public void testPutRequest() {
     /*
         Following approach is followed to test this functionality
         * Create a booking
@@ -21,16 +17,9 @@ public class testUpdateBooking extends testHelper {
         * Delete the booking
     */
 
-//        Create a Booking
-        response = createBooking();
-        int actualBookingId = response.getBody().jsonPath().get("bookingid");
-
 //        GET booking by ID and validate it
-        response = updateBooking(actualBookingId);
+        response = updateBooking(bookingId);
         Assert.assertEquals(200, response.statusCode());
-
-//        DELETE the booking
-        deleteBooking(actualBookingId);
 
     }
 }

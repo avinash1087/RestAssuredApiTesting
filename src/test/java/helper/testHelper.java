@@ -48,7 +48,7 @@ public class testHelper {
         JSONObject requestBody = createTestData.getCreateBookingData();
 
         Response response = given().contentType(ContentType.JSON).body(requestBody.toString()).
-                when().post(baseUrl).thenReturn();
+                when().post(baseUrl).then().statusCode(200).and().extract().response();
 
         System.out.println("Booking Created With Booking ID: " +
                 response.getBody().jsonPath().getString("bookingid"));

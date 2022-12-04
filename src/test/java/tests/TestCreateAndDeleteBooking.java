@@ -1,21 +1,16 @@
 package tests;
 
 import helper.testHelper;
-import io.restassured.http.ContentType;
 import io.restassured.response.Response;
-import org.json.simple.JSONObject;
 import org.junit.Assert;
 import org.junit.Test;
 
-import static io.restassured.RestAssured.given;
-
-public class testDelete extends testHelper{
-    Response response;
+public class TestCreateAndDeleteBooking extends testHelper{
     @Test
-    public void testDeleteRequest(){
+    public void testCreateAndDeleteRequest(){
 
 //      We first create a booking in order to test DELETE request
-        response = createBooking();
+        Response response = createBooking();
         Assert.assertEquals(200,response.statusCode());
         int bookingId = response.getBody().jsonPath().get("bookingid");
         System.out.println("Booking Confirmed, Please note the Booking ID: "+bookingId);
