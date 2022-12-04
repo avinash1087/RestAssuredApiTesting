@@ -3,7 +3,7 @@ package tests;
 import org.junit.Assert;
 import org.junit.Test;
 
-public class TestPartialUpdate extends BaseClass {
+public class TestPartialUpdateBooking extends BaseClass {
 
     @Test
     public void testPatchRequest() {

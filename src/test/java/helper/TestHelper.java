@@ -5,10 +5,10 @@ import io.restassured.response.Response;
 import org.json.simple.JSONObject;
 import org.junit.Assert;
 
-import static helper.createTestData.getTokenRequestBody;
+import static helper.CreateTestData.getTokenRequestBody;
 import static io.restassured.RestAssured.given;
 
-public class testHelper {
+public class TestHelper {
 
     String baseUrl = "https://restful-booker.herokuapp.com/booking";
 
@@ -45,7 +45,7 @@ public class testHelper {
 
     public Response createBooking() {
 
-        JSONObject requestBody = createTestData.getCreateBookingData();
+        JSONObject requestBody = CreateTestData.getCreateBookingData();
 
         Response response = given().contentType(ContentType.JSON).body(requestBody.toString()).
                 when().post(baseUrl).then().statusCode(200).and().extract().response();
@@ -72,7 +72,7 @@ public class testHelper {
         String token = getToken();
         Assert.assertNotNull(token);
 
-        JSONObject updateRequestBody=createTestData.getUpdateBookingData();
+        JSONObject updateRequestBody= CreateTestData.getUpdateBookingData();
         System.out.println("Updating BookingID: "+bookingId);
         return given().headers("Content-Type", "application/json", "Cookie", "token=" + token).
                 body(updateRequestBody.toString()).
@@ -84,7 +84,7 @@ public class testHelper {
         String token = getToken();
         Assert.assertNotNull(token);
 
-        JSONObject updateRequestBody=createTestData.getPartialUpdateBookingData();
+        JSONObject updateRequestBody= CreateTestData.getPartialUpdateBookingData();
         System.out.println("Partially Updating BookingID: "+bookingId);
         return given().headers("Content-Type", "application/json", "Cookie", "token=" + token).
                 body(updateRequestBody.toString()).

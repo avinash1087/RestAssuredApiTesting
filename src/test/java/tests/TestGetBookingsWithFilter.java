@@ -1,6 +1,6 @@
 package tests;
 
-import helper.createTestData;
+import helper.CreateTestData;
 import io.restassured.response.Response;
 import org.junit.Assert;
 import org.junit.Test;
@@ -64,7 +64,7 @@ public class TestGetBookingsWithFilter extends BaseClass {
 
 
 //        GET booking by name and validate it
-        response = getBookingByDate(createTestData.checkInDateRange, createTestData.checkOutDateRange);
+        response = getBookingByDate(CreateTestData.checkInDateRange, CreateTestData.checkOutDateRange);
         Assert.assertEquals(200, response.statusCode());
         List<HashMap<String, Integer>> expectedBookingId = response.getBody().jsonPath().getList("$");
         Assert.assertTrue(expectedBookingId.toString().contains(String.valueOf(bookingId)));

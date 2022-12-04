@@ -2,7 +2,7 @@ package helper;
 
 import org.json.simple.JSONObject;
 
-public class createTestData {
+public class CreateTestData {
 
     public static String checkInDateRange = "2022-11-25";
     public static String checkOutDateRange = "2022-12-31";

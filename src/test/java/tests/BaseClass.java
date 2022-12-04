@@ -1,11 +1,11 @@
 package tests;
 
-import helper.testHelper;
+import helper.TestHelper;
 import io.restassured.response.Response;
 import org.junit.After;
 import org.junit.Before;
 
-public class BaseClass extends testHelper {
+public class BaseClass extends TestHelper {
     int bookingId;
     Response response;
 

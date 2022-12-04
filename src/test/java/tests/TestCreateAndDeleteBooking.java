@@ -1,11 +1,11 @@
 package tests;
 
-import helper.testHelper;
+import helper.TestHelper;
 import io.restassured.response.Response;
 import org.junit.Assert;
 import org.junit.Test;
 
-public class TestCreateAndDeleteBooking extends testHelper{
+public class TestCreateAndDeleteBooking extends TestHelper {
     @Test
     public void testCreateAndDeleteRequest(){
 
