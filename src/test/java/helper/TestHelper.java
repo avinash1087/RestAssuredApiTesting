@@ -10,7 +10,7 @@ import static io.restassured.RestAssured.given;
 
 public class TestHelper {
 
-    String baseUrl = "https://restful-booker.herokuapp.com/booking";
+    public String baseUrl = "https://restful-booker.herokuapp.com/booking";
 
     public String getToken() {
 

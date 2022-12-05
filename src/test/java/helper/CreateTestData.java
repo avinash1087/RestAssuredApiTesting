@@ -56,4 +56,20 @@ public class CreateTestData {
 
         return body;
     }
+
+    public static JSONObject getInvalidCreateBookingData(){
+        JSONObject body = new JSONObject();
+        body.put("firstname","Rakesh");
+        body.put("depositpaid",true);
+        body.put("totalprice",1087);
+
+        JSONObject bookingDates = new JSONObject();
+        bookingDates.put("checkin","2022-12-01");
+        bookingDates.put("checkout","2022-12-02");
+
+        body.put("bookingdates",bookingDates);
+        body.put("additionalneeds","Breakfast");
+
+        return body;
+    }
 }
